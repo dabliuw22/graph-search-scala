@@ -15,12 +15,12 @@ class DepthFirstSearch {
     while (!stack.isEmpty) {
       val current = stack.pop()
       DepthFirstSearch.logger.info(s"Current node: $current")
-      if(current.data.equals(target)) {
+      if (current.data.equals(target)) {
         DepthFirstSearch.logger.info("Eureka")
         return true
       } else {
-        for(node <- current.neighbors) {
-          if(!node.visited) {
+        for (node <- current.neighbors) {
+          if (!node.visited) {
             node.visited = true
             stack.push(node)
           }

@@ -15,12 +15,12 @@ class BreadtFirstSearch {
     while (!queue.isEmpty) {
       val current = queue.dequeue
       BreadtFirstSearch.logger.info(s"Current node: $current")
-      if(current.data.equals(target)) {
+      if (current.data.equals(target)) {
         BreadtFirstSearch.logger.info("Eureka")
         return true
       } else {
         for (node <- current.neighbors) {
-          if(!node.visited) {
+          if (!node.visited) {
             node.visited = true
             queue.enqueue(node)
           }
