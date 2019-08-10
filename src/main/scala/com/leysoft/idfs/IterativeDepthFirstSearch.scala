@@ -16,14 +16,14 @@ class IterativeDepthFirstSearch {
       val current = stack.pop
       current.visited = true
       IterativeDepthFirstSearch.logger.info(s"Current node: $current")
-      if(current.data.equals(target)) {
+      if (current.data.equals(target)) {
         IterativeDepthFirstSearch.logger.info("Eureka")
         return true
       } else {
         breakable {
-          if(current.level >= level) break
+          if (current.level >= level) break
           for (node <- current.neighbors) {
-            if(!node.visited && !stack.contains(node)) {
+            if (!node.visited && !stack.contains(node)) {
               node.level = current.level + 1
               stack.push(node)
             }
