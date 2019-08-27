@@ -31,7 +31,6 @@ class IterativeDepthFirstSearch {
         }
       }
     }
-
     false
   }
 }
